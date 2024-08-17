@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller">
+    <left>
+        <VBox spacing="10" padding="10">
+            <TextField fx:id="firstNameField" promptText="First name"/>
+            <TextField fx:id="lastNameField" promptText="Last name"/>
+            <TextField fx:id="addressField" promptText="Address"/>
+
+            <Label text="Speed (mb/s):"/>
+            <HBox spacing="5">
+                <ToggleButton fx:id="speed2" text="2"/>
+                <ToggleButton fx:id="speed5" text="5"/>
+                <ToggleButton fx:id="speed10" text="10"/>
+                <ToggleButton fx:id="speed20" text="20"/>
+                <ToggleButton fx:id="speed50" text="50"/>
+                <ToggleButton fx:id="speed100" text="100"/>
+            </HBox>
+            <Label text="Bandwidth:"/>
+            <HBox spacing="5">
+                <ToggleButton fx:id="bandwidth1" text="1"/>
+                <ToggleButton fx:id="bandwidth5" text="5"/>
+                <ToggleButton fx:id="bandwidth10" text="10"/>
+                <ToggleButton fx:id="bandwidth100" text="100"/>
+                <ToggleButton fx:id="bandwidthFlat" text="Flat"/>
+            </HBox>
+            <Label text="Duration:"/>
+            <HBox spacing="5">
+                <ToggleButton fx:id="duration1Year" text="1 year"/>
+                <ToggleButton fx:id="duration2Years" text="2 years"/>
+            </HBox>
+            <Button text="Save Package" onAction="#handleSavePackage"/>
+            <Button text="Clear Form" onAction="#handleClearForm"/>
+            <Button text="Delete Table Row" onAction="#handleDeleteTableRow"/>
+        </VBox>
+    </left>
+    <center>
+        <TableView fx:id="tableView">
+            <columns>
+                <TableColumn fx:id="firstNameColumn" text="First Name"/>
+                <TableColumn fx:id="lastNameColumn" text="Last Name"/>
+                <TableColumn fx:id="addressColumn" text="Address"/>
+                <TableColumn fx:id="speedColumn" text="Speed (mb/s)"/>
+                <TableColumn fx:id="bandwidthColumn" text="Bandwidth"/>
+                <TableColumn fx:id="durationColumn" text="Duration"/>
+            </columns>
+            <items>
+                <FXCollections fx:factory="observableArrayList"/>
+            </items>
+        </TableView>
+    </center>
+</BorderPane>
